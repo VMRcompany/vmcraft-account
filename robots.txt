@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vmrcompany.github.io/vmcraft-account/sitemap.xml

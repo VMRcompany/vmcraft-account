@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Моды для VMcraft — Fabric, Forge, Modrinth, CurseForge</title>
+  <meta name="description" content="Как ставить моды и модпаки в VMcraft на Android: Modrinth, CurseForge, Fabric, Quilt, Forge, NeoForge и .mrpack.">
+  <link rel="canonical" href="https://vmrcompany.github.io/vmcraft-account/mods.html">
+  <meta name="theme-color" content="#171615">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VMcraft">
+  <meta property="og:title" content="Моды для VMcraft">
+  <meta property="og:description" content="Modrinth, CurseForge, Fabric, Quilt, Forge и модпаки в лаунчере VMcraft.">
+  <meta property="og:url" content="https://vmrcompany.github.io/vmcraft-account/mods.html">
+  <meta property="og:image" content="https://vmrcompany.github.io/vmcraft-account/images/icon.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="images/icon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css?v=20261021b">
+  <script>
+    (function () {
+      try {
+        if (!localStorage.getItem("vmcraft-cookies-ok")) {
+          document.documentElement.classList.add("cookie-pending");
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="mods">
+  <div class="bedrock" aria-hidden="true"></div>
+  <header class="nav" id="siteNav">
+    <div class="wrap nav-inner">
+      <div class="nav-left">
+        <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="siteMenu" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+        <a class="brand" href="index.html"><img src="images/icon.png" alt="VMcraft"> VMcraft</a>
+      </div>
+      <nav class="nav-links" id="siteMenu">
+        <a data-nav="home" href="index.html" data-i18n="navHome">Главная</a>
+        <a href="index.html#features" data-i18n="navFeat">Возможности</a>
+        <a data-nav="mods" href="mods.html" data-i18n="navMods">Моды</a>
+        <a data-nav="versions" href="versions.html" data-i18n="navVersions">Версии</a>
+        <a data-nav="pe" href="pe.html" data-i18n="navPe">VMcraftPE</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="lang" type="button" id="langBtn">EN</button>
+        <a class="btn btn-line" id="accountLink" data-nav="account" href="account.html" data-i18n="navAccount">Аккаунт</a>
+        <a class="btn btn-play" data-apk href="https://github.com/VMRcompany/vmcraft-updates/releases/download/0.1.40/VMcraft-0.1.40-release.apk" data-i18n="play">Скачать APK</a>
+      </div>
+    </div>
+  </header>
+  <main class="wrap section versions-page">
+    <h1 data-i18n="modsTitle">Моды и модпаки</h1>
+    <p class="sub" data-i18n="modsSub">Ставьте моды из Modrinth и CurseForge прямо в VMcraft: Fabric, Quilt, Forge, NeoForge и .mrpack-сборки.</p>
+    <div class="ecosystem">
+      <div class="eco"><img src="images/modrinth.png" alt="Modrinth"><span>Modrinth</span></div>
+      <div class="eco"><img src="images/curseforge.png" alt="CurseForge"><span>CurseForge</span></div>
+      <div class="eco"><img src="images/fabric.webp" alt="Fabric"><span>Fabric</span></div>
+      <div class="eco"><img src="images/quilt.webp" alt="Quilt"><span>Quilt</span></div>
+    </div>
+    <div class="toolbar">
+      <input id="modQuery" class="search" type="search" autocomplete="off" data-i18n-placeholder="modsSearch" placeholder="Найти мод…">
+      <div class="chips">
+        <button type="button" class="chip is-on" data-type="mod" data-i18n="modsTypeMod">Моды</button>
+        <button type="button" class="chip" data-type="modpack" data-i18n="modsTypePack">Модпаки</button>
+      </div>
+    </div>
+    <div id="modGrid" class="mod-grid"></div>
+    <h2 data-i18n="modsHowTitle">Как поставить мод в VMcraft</h2>
+    <div class="steps">
+      <article class="step">
+        <div class="num">1</div>
+        <h3 data-i18n="modsH1t">Откройте поиск модов</h3>
+        <p data-i18n="modsH1d">В лаунчере найдите Modrinth или CurseForge и введите название.</p>
+      </article>
+      <article class="step">
+        <div class="num">2</div>
+        <h3 data-i18n="modsH2t">Выберите загрузчик</h3>
+        <p data-i18n="modsH2d">Создайте профиль Fabric, Quilt, Forge или NeoForge под нужную версию игры.</p>
+      </article>
+      <article class="step">
+        <div class="num">3</div>
+        <h3 data-i18n="modsH3t">Или поставьте сборку</h3>
+        <p data-i18n="modsH3d">Импортируйте .mrpack или zip — VMcraft сам скачает моды и создаст профиль.</p>
+      </article>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <div class="foot-nav">
+          <a href="index.html" data-i18n="navHome">Главная</a>
+          <a href="mods.html" data-i18n="navMods">Моды</a>
+          <a href="versions.html" data-i18n="navVersions">Версии</a>
+          <a href="pe.html" data-i18n="navPe">VMcraftPE</a>
+          <a href="account.html" data-i18n="navAccount">Аккаунт</a>
+          <a href="privacy.html" data-i18n="navPrivacy">Конфиденциальность</a>
+        </div>
+        <div class="store-badges">
+          <a href="https://www.rustore.ru/catalog/app/app.vmcraft.pro?utm_source=available_in_rustore&amp;utm_medium=app.vmcraft.pro&amp;rsm=1&amp;mt_link_id=iios36&amp;mt_sub1=app.vmcraft.pro" target="_blank" rel="noopener">
+            <img src="images/rustore-badge.svg" width="111" height="40" alt="Доступно в RuStore">
+          </a>
+          <a href="https://apkpure.com/p/app.vmcraft.pro" target="_blank" rel="noopener">
+            <img src="images/apkpure-badge.svg?v=20261008e" width="111" height="40" alt="Скачайте из APKPure">
+          </a>
+        </div>
+        <div class="legal" data-i18n="legal">VMcraft — независимый проект. Он не связан с Mojang, Microsoft и Minecraft. Minecraft является товарным знаком Mojang Synergies AB.</div>
+        <div class="foot-support" data-i18n="footSupport">Оставьте свой вопрос или обратитесь в поддержку на support.mineholde@gmail.com</div>
+      </div>
+      <div data-i18n="copy">© VMcraft · VMRcompany</div>
+    </div>
+  </footer>
+  <aside class="cookie-banner" id="cookieBanner">
+    <img src="images/cookie.png" width="56" height="56" alt="">
+    <p>
+      <span data-i18n="cookieText">Мы используем cookies, чтобы сайт работал удобнее.</span>
+      <a class="cookie-link" href="privacy.html" data-i18n="cookiePolicy">Политика конфиденциальности</a>
+    </p>
+    <button type="button" class="btn btn-play" id="cookieAccept" data-i18n="cookieAccept">Принять</button>
+  </aside>
+  <script src="js/app.js?v=20261021b"></script>
+  <script src="js/cookie.js?v=20261020c"></script>
+  <script src="js/mods.js?v=20260920g"></script>
+</body>
+</html>

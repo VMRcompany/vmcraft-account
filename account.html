@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Аккаунт — VMcraft</title>
+  <meta name="description" content="Вход VMcraft через Microsoft: профиль Minecraft и отметка, играете ли вы в VMcraft.">
+  <link rel="canonical" href="https://vmrcompany.github.io/vmcraft-account/account.html">
+  <meta name="theme-color" content="#171615">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="VMcraft">
+  <meta property="og:title" content="Аккаунт — VMcraft">
+  <meta property="og:description" content="Вход VMcraft через Microsoft: профиль Minecraft и отметка, играете ли вы в VMcraft.">
+  <meta property="og:url" content="https://vmrcompany.github.io/vmcraft-account/account.html">
+  <meta property="og:image" content="https://vmrcompany.github.io/vmcraft-account/images/icon.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="images/icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="images/icon-round.png">
+  <link rel="stylesheet" href="css/style.css?v=20261021b">
+  <script>
+    (function () {
+      try {
+        if (!localStorage.getItem("vmcraft-cookies-ok")) {
+          document.documentElement.classList.add("cookie-pending");
+        }
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body data-page="account">
+  <div class="bedrock" aria-hidden="true"></div>
+  <header class="nav" id="siteNav">
+    <div class="wrap nav-inner">
+      <div class="nav-left">
+        <button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="siteMenu" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+        <a class="brand" href="index.html"><img src="images/icon.png" alt="VMcraft"> VMcraft</a>
+      </div>
+      <nav class="nav-links" id="siteMenu">
+        <a data-nav="home" href="index.html" data-i18n="navHome">Главная</a>
+        <a href="index.html#features" data-i18n="navFeat">Возможности</a>
+        <a data-nav="mods" href="mods.html" data-i18n="navMods">Моды</a>
+        <a data-nav="versions" href="versions.html" data-i18n="navVersions">Версии</a>
+        <a data-nav="pe" href="pe.html" data-i18n="navPe">VMcraftPE</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="lang" type="button" id="langBtn">EN</button>
+        <a class="btn btn-line" id="accountLink" data-nav="account" href="account.html" data-i18n="navAccount">Аккаунт</a>
+        <a class="btn btn-play" data-apk href="https://github.com/VMRcompany/vmcraft-updates/releases/download/0.1.40/VMcraft-0.1.40-release.apk" data-i18n="play">Скачать APK</a>
+      </div>
+    </div>
+  </header>
+  <main class="wrap section versions-page">
+    <h1 data-i18n="accountTitle">Аккаунт</h1>
+    <div class="account-panel">
+      <div id="accountSignedOut">
+        <p class="account-lead" data-i18n="accountLead">Войдите через Microsoft, чтобы увидеть тот же профиль, который получает сайт Minecraft: имя, почту, Xbox gamertag, ник и UUID Minecraft, скин и владение Java Edition.</p>
+        <p class="account-note" data-i18n="accountPassword">Пароль вводится только на сайте Microsoft. VMcraft его не видит и не сохраняет.</p>
+        <button class="btn btn-ms" type="button" id="msSignIn">
+          <svg class="ms-logo" viewBox="0 0 21 21" aria-hidden="true">
+            <rect x="1" y="1" width="9" height="9" fill="#f25022"></rect>
+            <rect x="11" y="1" width="9" height="9" fill="#7fba00"></rect>
+            <rect x="1" y="11" width="9" height="9" fill="#00a4ef"></rect>
+            <rect x="11" y="11" width="9" height="9" fill="#ffb900"></rect>
+          </svg>
+          <span data-i18n="accountSignIn">Войти с Microsoft</span>
+        </button>
+        <p class="account-warn" id="accountSetup" hidden></p>
+      </div>
+      <div id="accountSignedIn" hidden>
+        <div class="account-card">
+          <img class="account-skin" id="skinImg" alt="" hidden>
+          <dl class="account-fields" id="accountFields"></dl>
+        </div>
+        <label class="play-flag">
+          <input type="checkbox" id="playsVMcraft">
+          <span data-i18n="playsVMcraft">Я играю в VMcraft</span>
+        </label>
+        <p class="account-note" data-i18n="playsHint">Microsoft этого не сообщает. Отметьте сами — ответ сохранится в этом браузере вместе с профилем.</p>
+        <p class="account-note" data-i18n="accountMcNote">Ник, UUID и владение Java Edition приходят от Xbox Live и Minecraft Services. Если браузер блокирует эти запросы, на странице останутся данные аккаунта Microsoft.</p>
+        <div class="account-actions">
+          <button class="btn btn-ghost" type="button" id="msSignOut" data-i18n="signOut">Выйти</button>
+        </div>
+      </div>
+      <p id="accountStatus" role="status"></p>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <div class="foot-nav">
+          <a href="index.html" data-i18n="navHome">Главная</a>
+          <a href="mods.html" data-i18n="navMods">Моды</a>
+          <a href="versions.html" data-i18n="navVersions">Версии</a>
+          <a href="pe.html" data-i18n="navPe">VMcraftPE</a>
+          <a href="account.html" data-i18n="navAccount">Аккаунт</a>
+          <a href="privacy.html" data-i18n="navPrivacy">Конфиденциальность</a>
+        </div>
+        <div class="store-badges">
+          <a href="https://www.rustore.ru/catalog/app/app.vmcraft.pro?utm_source=available_in_rustore&amp;utm_medium=app.vmcraft.pro&amp;rsm=1&amp;mt_link_id=iios36&amp;mt_sub1=app.vmcraft.pro" target="_blank" rel="noopener">
+            <img src="images/rustore-badge.svg" width="111" height="40" alt="Доступно в RuStore">
+          </a>
+          <a href="https://apkpure.com/p/app.vmcraft.pro" target="_blank" rel="noopener">
+            <img src="images/apkpure-badge.svg?v=20261008e" width="111" height="40" alt="Скачайте из APKPure">
+          </a>
+        </div>
+        <div class="legal" data-i18n="legal">VMcraft — независимый проект. Он не связан с Mojang, Microsoft и Minecraft. Minecraft является товарным знаком Mojang Synergies AB.</div>
+        <div class="foot-support" data-i18n="footSupport">Оставьте свой вопрос или обратитесь в поддержку на support.mineholde@gmail.com</div>
+      </div>
+      <div data-i18n="copy">© VMcraft · VMRcompany</div>
+    </div>
+  </footer>
+  <aside class="cookie-banner" id="cookieBanner">
+    <img src="images/cookie.png" width="56" height="56" alt="">
+    <p>
+      <span data-i18n="cookieText">Мы используем cookies, чтобы сайт работал удобнее.</span>
+      <a class="cookie-link" href="privacy.html" data-i18n="cookiePolicy">Политика конфиденциальности</a>
+    </p>
+    <button type="button" class="btn btn-play" id="cookieAccept" data-i18n="cookieAccept">Принять</button>
+  </aside>
+  <script src="js/ms-config.js?v=20261021b"></script>
+  <script src="js/app.js?v=20261021b"></script>
+  <script src="js/auth.js?v=20261021b"></script>
+  <script src="js/cookie.js?v=20261020c"></script>
+</body>
+</html>
